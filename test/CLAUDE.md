@@ -23,21 +23,23 @@ python snake_game.py
 每个算法文件遵循统一结构，新增时须保持一致：
 
 1. **模块文档字符串**：时间复杂度（最好/平均/最坏）、空间复杂度、稳定性、`实现模型: <model>`
-2. **实现函数**：接受 `arr: list` 和可选 `reverse: bool = False`，不修改原数组（先 `arr[:]` 复制），返回新列表
-3. **`__main__` 测试块**：覆盖空列表、单元素、已升序、已降序、含重复元素、降序排列 6 类边界情况
+2. **实现函数**：接受 `arr: list`，不修改原数组（先 `arr[:]` 复制），返回新列表
+   - O(n²) 算法（冒泡、选择、插入）额外支持 `reverse: bool = False` 参数
+   - 需要辅助函数时用 `_` 前缀私有命名（如 `_heapify`、`_merge`、`_partition`、`_generate_knuth_gaps`）
+3. **`__main__` 测试块**：覆盖空列表、单元素、已升序、已降序、含重复元素、降序排列（有 `reverse` 时）等边界情况
 
 ## 已实现的算法
 
-| 文件 | 算法 | 稳定性 | 平均时间复杂度 |
-|------|------|--------|---------------|
-| `bubble_sort.py` | 冒泡排序 | 稳定 | O(n²) |
-| `selection_sort.py` | 选择排序 | 不稳定 | O(n²) |
-| `insertion_sort.py` | 插入排序 | 稳定 | O(n²) |
-| `shell_sort.py` | 希尔排序 | 不稳定 | O(n log n) |
-| `merge_sort.py` | 归并排序 | 稳定 | O(n log n) |
-| `quick_sort.py` | 快速排序 | 不稳定 | O(n log n) |
-| `heap_sort.py` | 堆排序 | 不稳定 | O(n log n) |
-| `counting_sort.py` | 计数排序（仅整数）| 稳定 | O(n + k) |
+| 文件 | 算法 | 稳定性 | 平均时间复杂度 | `reverse` 支持 |
+|------|------|--------|---------------|---------------|
+| `bubble_sort.py` | 冒泡排序 | 稳定 | O(n²) | ✓ |
+| `selection_sort.py` | 选择排序 | 不稳定 | O(n²) | ✓ |
+| `insertion_sort.py` | 插入排序 | 稳定 | O(n²) | ✓ |
+| `shell_sort.py` | 希尔排序 | 不稳定 | O(n log n) | — |
+| `merge_sort.py` | 归并排序 | 稳定 | O(n log n) | — |
+| `quick_sort.py` | 快速排序 | 不稳定 | O(n log n) | — |
+| `heap_sort.py` | 堆排序 | 不稳定 | O(n log n) | — |
+| `counting_sort.py` | 计数排序（仅整数）| 稳定 | O(n + k) | — |
 
 ## 游戏文件
 
